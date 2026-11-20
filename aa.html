@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثانوية الجزائر - النزاهة ومواجهة الجرائم المالية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "Tajawal", "Cairo", "Tahoma", sans-serif;
+            background-color: #f6f5f0;
+            color: #1e2d3d;
+            line-height: 1.75;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        h1, h2, h3, h4, .nav-btn, .lesson-btn, .gold-btn, .light-btn, .choice-btn, .top-school-tag, .brand-unit, .card-jump-link, .clue-btn {
+            font-family: "Cairo", "Tajawal", "Tahoma", sans-serif;
+        }
+        header {
+            background-color: #1b365d;
+            color: #f8f7f2;
+            border-bottom: 3px solid #c5a059;
+            padding: 14px 20px 18px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 16px rgba(27, 54, 93, 0.12);
+        }
+        .header-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 14px;
+        }
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+        }
+        .top-school-tag {
+            background-color: #2b4c79;
+            color: #ead39c;
+            border: 1px solid #c5a059;
+            padding: 3px 14px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            align-self: flex-start;
+            transform: translateY(-3px);
+        }
+        .brand-unit {
+            color: #f8f7f2;
+            font-size: 20px;
+            font-weight: 700;
+            display: block;
+            margin-top: 1px;
+        }
+        .nav-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            align-self: center;
+        }
+        .nav-btn {
+            background-color: #274773;
+            color: #f4f3ee;
+            border: 1px solid #456999;
+            padding: 8px 15px;
+            border-radius: 9px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .nav-btn:hover {
+            background-color: #365c8f;
+        }
+        .nav-btn.active {
+            background-color: #c5a059;
+            color: #162944;
+            border-color: #c5a059;
+            font-weight: 700;
+        }
+        main {
+            flex: 1;
+            max-width: 1180px;
+            width: 100%;
+            margin: 24px auto;
+            padding: 0 20px;
+        }
+        .section-box {
+            display: none;
+        }
+        .section-box.active-section {
+            display: block;
+        }
+        .hero-card {
+            background: linear-gradient(135deg, #1b365d 0%, #2d536b 65%, #3d6b62 100%);
+            color: #f9f8f4;
+            border-radius: 18px;
+            padding: 28px;
+            border: 1px solid #c5a059;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 24px rgba(27, 54, 93, 0.1);
+        }
+        .hero-card img {
+            width: 100%;
+            max-height: 270px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 18px;
+            border: 1px solid rgba(234, 211, 156, 0.45);
+        }
+        .hero-card h1 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #fffdf7;
+        }
+        .hero-card p {
+            color: #e7ece9;
+            font-size: 15.5px;
+            margin-bottom: 18px;
+            max-width: 900px;
+        }
+        .action-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+        .gold-btn {
+            background-color: #c5a059;
+            color: #162944;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 9px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .gold-btn:hover {
+            background-color: #d4b26e;
+        }
+        .light-btn {
+            background-color: rgba(249, 248, 244, 0.14);
+            color: #f9f8f4;
+            border: 1px solid rgba(249, 248, 244, 0.35);
+            padding: 10px 18px;
+            border-radius: 9px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .light-btn:hover {
+            background-color: rgba(249, 248, 244, 0.22);
+        }
+        .lessons-overview-title {
+            color: #1b365d;
+            font-size: 21px;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+        .grid-lessons-5 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #e2dfd7;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 16px rgba(27, 54, 93, 0.05);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 22px rgba(27, 54, 93, 0.09);
+        }
+        .card img {
+            width: 100%;
+            height: 142px;
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .lesson-num-pill {
+            display: inline-block;
+            background-color: #eef3f1;
+            color: #3d6b62;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 6px;
+        }
+        .card-body h3 {
+            color: #1b365d;
+            font-size: 16.5px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            border-right: 3px solid #c5a059;
+            padding-right: 9px;
+        }
+        .card-body p {
+            color: #4b5c6e;
+            font-size: 13.5px;
+        }
+        .card-jump-link {
+            align-self: flex-start;
+            background-color: #f3f5f8;
+            color: #1b365d;
+            border: 1px solid #d5dde7;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12.5px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .card-jump-link:hover {
+            background-color: #e4ebf2;
+        }
+        .panel-white {
+            background-color: #ffffff;
+            border: 1px solid #e2dfd7;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 18px rgba(27, 54, 93, 0.05);
+        }
+        .lesson-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 16px 0 20px;
+        }
+        .lesson-btn {
+            background-color: #eef2f5;
+            color: #1b365d;
+            border: 1px solid #d2dce6;
+            padding: 9px 14px;
+            border-radius: 9px;
+            font-weight: 700;
+            font-size: 13.5px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .lesson-btn:hover {
+            background-color: #e1e8ef;
+        }
+        .lesson-btn.active {
+            background-color: #3d6b62;
+            color: #fffdf7;
+            border-color: #3d6b62;
+        }
+        .concept-box {
+            background-color: #f8f7f2;
+            border-right: 4px solid #c5a059;
+            padding: 16px;
+            border-radius: 11px;
+            margin: 16px 0;
+        }
+        .concept-box h4 {
+            color: #1b365d;
+            margin-bottom: 6px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .point-list {
+            list-style: none;
+            margin: 12px 0 20px;
+        }
+        .point-list li {
+            background-color: #fbfcfa;
+            border: 1px solid #e7e9e4;
+            border-radius: 9px;
+            padding: 12px 14px;
+            margin-bottom: 8px;
+            font-size: 14.5px;
+            color: #253647;
+        }
+        .activity-item {
+            background-color: #f4f7f5;
+            border: 1px solid #cfe0d9;
+            border-radius: 9px;
+            padding: 12px 14px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #213832;
+        }
+        .sim-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .phone-frame {
+            background: linear-gradient(160deg, #1b365d 0%, #29495e 100%);
+            color: #f8f7f2;
+            border-radius: 24px;
+            padding: 22px;
+            border: 4px solid #3c5c75;
+        }
+        .phone-msg {
+            background-color: rgba(248, 247, 242, 0.12);
+            border: 1px solid rgba(248, 247, 242, 0.24);
+            border-radius: 12px;
+            padding: 16px;
+            margin: 16px 0;
+            font-size: 14.5px;
+            min-height: 120px;
+        }
+        .option-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .choice-btn {
+            text-align: right;
+            background-color: #f6f8fa;
+            color: #1b365d;
+            border: 1px solid #d3dce6;
+            padding: 12px 14px;
+            border-radius: 9px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .choice-btn:hover {
+            background-color: #e9eff5;
+        }
+        .forensic-board {
+            background: linear-gradient(135deg, #1b365d 0%, #2c4f63 60%, #3d6b62 100%);
+            color: #f8f7f2;
+            border-radius: 16px;
+            padding: 22px;
+            border: 1px solid #c5a059;
+            margin-bottom: 18px;
+        }
+        .clues-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            margin-top: 14px;
+        }
+        .clue-card {
+            background-color: rgba(248, 247, 242, 0.08);
+            border: 1px dashed rgba(234, 211, 156, 0.65);
+            border-radius: 12px;
+            padding: 14px;
+        }
+        .clue-card.revealed {
+            background-color: rgba(197, 160, 89, 0.18);
+            border: 1px solid #e5c683;
+        }
+        .clue-btn {
+            background-color: #c5a059;
+            color: #162944;
+            border: none;
+            padding: 7px 12px;
+            border-radius: 7px;
+            font-weight: 700;
+            font-size: 12.5px;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+        .truth-meter-bar {
+            width: 100%;
+            height: 9px;
+            background-color: rgba(248, 247, 242, 0.2);
+            border-radius: 99px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+        .truth-meter-fill {
+            height: 100%;
+            width: 0%;
+            background-color: #e5c683;
+            transition: width 0.3s ease;
+        }
+        .feedback-box {
+            padding: 14px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 14px;
+            margin-top: 12px;
+        }
+        .feedback-ok {
+            background-color: #e8f4ee;
+            color: #1f5943;
+            border: 1px solid #9ecab8;
+        }
+        .feedback-err {
+            background-color: #faeceb;
+            color: #84312d;
+            border: 1px solid #e5b2af;
+        }
+        .certificate-card {
+            background: linear-gradient(135deg, #1b365d 0%, #3d6b62 100%);
+            color: #f8f7f2;
+            border: 3px solid #c5a059;
+            border-radius: 18px;
+            padding: 28px;
+            text-align: center;
+        }
+        .certificate-card h3 {
+            color: #ead39c;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        footer {
+            background-color: #1b365d;
+            color: #e8edf2;
+            border-top: 3px solid #c5a059;
+            padding: 20px;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+        .footer-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+        .learners-bottom {
+            color: #ead39c;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <div class="header-right">
+                <span id="topSchoolBadge" class="top-school-tag">ثانوية الجزائر</span>
+                <span class="brand-unit">النزاهة ومواجهة الجرائم المالية</span>
+            </div>
+            <div class="nav-bar" id="mainNavBar">
+                <button type="button" id="btn-home" class="nav-btn active" data-section="home">الرئيسية</button>
+                <button type="button" id="btn-lessons" class="nav-btn" data-section="lessons">دروس الوحدة</button>
+                <button type="button" id="btn-simulator" class="nav-btn" data-section="simulator">محاكي الاحتيال</button>
+                <button type="button" id="btn-lab" class="nav-btn" data-section="lab">مختبر القضايا</button>
+                <button type="button" id="btn-quiz" class="nav-btn" data-section="quiz">التقويم والشهادة</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="appMain">
+        <!-- القسم الأول: الرئيسية -->
+        <section id="sec-home" class="section-box active-section" style="display:block;">
+            <div class="hero-card">
+                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1400&q=80" alt="ميزان العدالة والقانون">
+                <h1>النزاهة ومواجهة الجرائم المالية</h1>
+                <p>منصة تعليمية هادئة وتفاعلية تستعرض دروس الوحدة التعلمية الخامسة (الصف العاشر - الفصل الدراسي الأول) وتشمل النزاهة، مواجهة الجريمة، السرقة، النصب والاحتيال، وخيانة الأمانة، مع غرفة تحقيق رقمي ومحاكي احتيال واختبار تقويم.</p>
+                <div class="action-row">
+                    <button type="button" id="heroOpenLessonsBtn" class="gold-btn">استعراض دروس الوحدة</button>
+                    <button type="button" id="heroOpenLabBtn" class="light-btn">دخول غرفة التحقيق الرقمي</button>
+                </div>
+            </div>
+
+            <div class="lessons-overview-title">دروس الوحدة الخمسة</div>
+            <div class="grid-lessons-5">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=80" alt="الدرس الأول: النزاهة">
+                    <div class="card-body">
+                        <div>
+                            <span class="lesson-num-pill">الدرس ١</span>
+                            <h3>النزاهة</h3>
+                            <p>الصدق والأمانة والعدل والابتعاد عن الغش والفساد واستغلال النفوذ، وصون المال العام.</p>
+                        </div>
+                        <button type="button" class="card-jump-link" data-jump-lesson="1">فتح الدرس الأول</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80" alt="الدرس الثاني: مواجهة الجريمة">
+                    <div class="card-body">
+                        <div>
+                            <span class="lesson-num-pill">الدرس ٢</span>
+                            <h3>مواجهة الجريمة</h3>
+                            <p>أهداف مواجهة الجريمة وتكامل أدوار الأسرة والمدرسة والمؤسسات الأمنية والإعلامية.</p>
+                        </div>
+                        <button type="button" class="card-jump-link" data-jump-lesson="2">فتح الدرس الثاني</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80" alt="الدرس الثالث: السرقة">
+                    <div class="card-body">
+                        <div>
+                            <span class="lesson-num-pill">الدرس ٣</span>
+                            <h3>السرقة</h3>
+                            <p>اختلاس مال منقول مملوك للغير بنية تملكه، وأركانها، وأنواعها (البسيطة، المشددة، بالإكراه).</p>
+                        </div>
+                        <button type="button" class="card-jump-link" data-jump-lesson="3">فتح الدرس الثالث</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80" alt="الدرس الرابع: النصب والاحتيال">
+                    <div class="card-body">
+                        <div>
+                            <span class="lesson-num-pill">الدرس ٤</span>
+                            <h3>النصب والاحتيال</h3>
+                            <p>استعمال الخداع والتضليل للحصول على مال أو منفعة، وأشكالها الإلكترونية والمالية وفي البيع والشراء.</p>
+                        </div>
+                        <button type="button" class="card-jump-link" data-jump-lesson="4">فتح الدرس الرابع</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80" alt="الدرس الخامس: خيانة الأمانة">
+                    <div class="card-body">
+                        <div>
+                            <span class="lesson-num-pill">الدرس ٥</span>
+                            <h3>خيانة الأمانة</h3>
+                            <p>الاستيلاء على مال أو شيء سُلم على سبيل الأمانة أو الثقة وصورها وآثارها على المجتمع.</p>
+                        </div>
+                        <button type="button" class="card-jump-link" data-jump-lesson="5">فتح الدرس الخامس</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- القسم الثاني: دروس الوحدة -->
+        <section id="sec-lessons" class="section-box">
+            <div class="panel-white">
+                <h2 style="color:#1b365d; font-size:24px; font-weight:700;">النزاهة ومواجهة الجرائم المالية - دروس الوحدة الخامسة</h2>
+                <div class="lesson-tabs" id="lessonTabsBar">
+                    <button type="button" id="lbtn-1" class="lesson-btn active" data-lesson="1">الدرس ١: النزاهة</button>
+                    <button type="button" id="lbtn-2" class="lesson-btn" data-lesson="2">الدرس ٢: مواجهة الجريمة</button>
+                    <button type="button" id="lbtn-3" class="lesson-btn" data-lesson="3">الدرس ٣: السرقة</button>
+                    <button type="button" id="lbtn-4" class="lesson-btn" data-lesson="4">الدرس ٤: النصب والاحتيال</button>
+                    <button type="button" id="lbtn-5" class="lesson-btn" data-lesson="5">الدرس ٥: خيانة الأمانة</button>
+                </div>
+                <div id="lesson-content-area"></div>
+            </div>
+        </section>
+
+        <!-- القسم الثالث: محاكي الاحتيال -->
+        <section id="sec-simulator" class="section-box">
+            <div class="panel-white">
+                <h2 style="color:#1b365d; font-size:24px; font-weight:700; margin-bottom:16px;">النزاهة ومواجهة الجرائم المالية - محاكي الاحتيال</h2>
+                <div class="sim-layout">
+                    <div class="phone-frame">
+                        <div style="font-size:12.5px; color:#ead39c; font-weight:700;">إشعار على الهاتف</div>
+                        <div id="sim-sender" style="font-size:18px; font-weight:700; margin-top:4px;"></div>
+                        <div id="sim-msg" class="phone-msg"></div>
+                        <button type="button" id="analyzeSimBtn" class="gold-btn" style="width:100%;">فحص وتحليل الرسالة</button>
+                    </div>
+                    <div>
+                        <h3 style="color:#1b365d; font-weight:700; margin-bottom:10px;">اختر حالة للاختبار:</h3>
+                        <div class="option-stack">
+                            <button type="button" class="choice-btn" data-sim="0">١. رابط وهمي لسرقة الحسابات</button>
+                            <button type="button" class="choice-btn" data-sim="1">٢. ترويج لاستثمارات وهمية</button>
+                            <button type="button" class="choice-btn" data-sim="2">٣. احتيال في البيع والشراء</button>
+                            <button type="button" class="choice-btn" data-sim="3">٤. إشعار توعوي آمن</button>
+                        </div>
+                        <div class="concept-box">
+                            <h4>نتيجة الفحص والتحليل:</h4>
+                            <div id="sim-result" style="font-size:14.5px; color:#253647;">اضغط على زر «فحص وتحليل الرسالة» لعرض النتيجة.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- القسم الرابع: مختبر القضايا + غرفة التحقيق الرقمي -->
+        <section id="sec-lab" class="section-box">
+            <div class="panel-white">
+                <h2 style="color:#1b365d; font-size:24px; font-weight:700; margin-bottom:12px;">النزاهة ومواجهة الجرائم المالية - مختبر القضايا</h2>
+                <div style="display:flex; justify-content:space-between; font-size:14px; font-weight:700; color:#4b5e7a; margin-bottom:14px;">
+                    <span id="lab-counter"></span>
+                    <span id="lab-score"></span>
+                </div>
+
+                <div class="forensic-board">
+                    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px;">
+                        <span style="color:#ead39c; font-weight:700; font-size:17px;">غرفة التحقيق الرقمي وكشف الحقيقة</span>
+                        <span id="truthPercentLabel" style="color:#ead39c; font-weight:700; font-size:13.5px;">نسبة كشف الأدلة: ٠٪</span>
+                    </div>
+                    <div class="truth-meter-bar">
+                        <div id="truthMeterFill" class="truth-meter-fill"></div>
+                    </div>
+                    <div id="lab-case-box" class="concept-box" style="background-color:rgba(248, 247, 242, 0.1); color:#f8f7f2;"></div>
+                    <div id="cluesContainer" class="clues-grid"></div>
+                </div>
+
+                <h4 style="color:#1b365d; font-weight:700; margin-bottom:8px;">أصدِر التكييف القانوني الصحيح بعد فحص الأدلة:</h4>
+                <div class="action-row" style="margin-bottom:12px;">
+                    <button type="button" class="choice-btn" data-answer="سرقة">سرقة</button>
+                    <button type="button" class="choice-btn" data-answer="نصب واحتيال">نصب واحتيال</button>
+                    <button type="button" class="choice-btn" data-answer="خيانة أمانة">خيانة أمانة</button>
+                </div>
+                <div id="lab-feedback" class="feedback-box" style="display:none;"></div>
+                <div style="margin-top:14px;">
+                    <button type="button" id="lab-next-btn" class="gold-btn" style="display:none;">القضية التالية</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- القسم الخامس: التقويم والشهادة -->
+        <section id="sec-quiz" class="section-box">
+            <div class="panel-white" id="quiz-card">
+                <h2 style="color:#1b365d; font-size:24px; font-weight:700; margin-bottom:12px;">النزاهة ومواجهة الجرائم المالية - اختبار التقويم</h2>
+                <div id="quiz-body"></div>
+            </div>
+
+            <div class="certificate-card" id="cert-card" style="display:none;">
+                <h3>شهادة إتمام مراجعة وحدة النزاهة ومواجهة الجرائم المالية</h3>
+                <p id="cert-result-text" style="margin:12px 0 18px; font-size:16px;"></p>
+                <button type="button" id="resetQuizBtn" class="gold-btn">إعادة الاختبار</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <strong>النزاهة ومواجهة الجرائم المالية</strong>
+            </div>
+            <div class="learners-bottom">
+                المتعلمات: دلال مشعل، ساره عايد، سعاد عبدالمحسن، نور احمد
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            var sectionIds = ["home", "lessons", "simulator", "lab", "quiz"];
+
+            var lessons = {
+                1: {
+                    title: "الدرس الأول: النزاهة ودورها في حماية المجتمع من الجريمة",
+                    conceptTitle: "مفهوم النزاهة",
+                    concept: "هي التحلي بالصدق والأمانة والعدل، والابتعاد عن الغش والفساد واستغلال السلطة أو النفوذ لتحقيق مصالح شخصية بصورة غير مشروعة.",
+                    points: [
+                        "النزاهة من القيم الأخلاقية والإنسانية الأساسية التي تسهم في استقرار المجتمع وتقدمه وتعزز الثقة والعدالة والتعاون بين أفراده.",
+                        "غياب النزاهة يؤدي إلى انتشار الفساد والرشوة وما يترتب على ذلك من مشكلات اجتماعية واقتصادية.",
+                        "صور النزاهة في السلوك اليومي تظهر في احترام القوانين والحقوق وأداء الواجبات بأمانة.",
+                        "موقف الخليفة عمر بن الخطاب رضي الله عنه في السوق عندما أمر ببيع إبلي عبد الله بن عمر وأخذ رأس المال ورد الربح لبيت مال المسلمين حتى لا يُستغل المنصب أو النفوذ لمصلحة شخصية."
+                    ],
+                    activities: [
+                        "كيف تسهم النزاهة في حماية المجتمع وتحقيق الأمن والاستقرار وتعزيز الثقة بين أفراده؟",
+                        "اتخذ قراراً: إذا طُلب منك مخالفة قانون أو نظام لمصلحة شخصية لأحد معارفك، فما القرار وما الأسباب؟",
+                        "لخّص قصة الخليفة عمر بن الخطاب رضي الله عنه موضحاً كيف عكست النزاهة والعدل وأبرز الدروس المستفادة."
+                    ]
+                },
+                2: {
+                    title: "الدرس الثاني: مواجهة الجريمة أهدافها وأدوار مؤسسات المجتمع",
+                    conceptTitle: "مفهوم مواجهة الجريمة",
+                    concept: "مجموعة الجهود والإجراءات التي تهدف إلى الحد من الجرائم ومنع انتشارها وحماية المجتمع من آثارها.",
+                    points: [
+                        "الجريمة تؤثر سلباً في أمن المجتمع واستقراره وتسبب أضراراً تمس الأفراد والممتلكات والقيم الاجتماعية.",
+                        "مسؤولية مواجهة الجريمة لا تقتصر على الجهات الأمنية وحدها، بل تشترك فيها مؤسسات الدولة وأفراد المجتمع بالالتزام بالقوانين ونشر الوعي والتعاون.",
+                        "مؤاخاة النبي صلى الله عليه وسلم بين المهاجرين والأنصار في المدينة المنورة نموذج يجسد التعاون والتكافل والمسؤولية في مواجهة السلوكيات الضارة.",
+                        "تتكامل أدوار الأسرة والمدرسة والمؤسسات الأمنية والإعلامية في التوعية والوقاية وحماية المجتمع."
+                    ],
+                    activities: [
+                        "وضح كيف يسهم تعاون الأسرة والمدرسة والمؤسسات الأمنية والإعلامية في حماية المجتمع من الجريمة.",
+                        "اقترح مبادرة (حملة) يمكن تنفيذها داخل المدرسة للمساهمة في مواجهة الجريمة مع تحديد الهدف والأثر المتوقع والجهة المشاركة."
+                    ]
+                },
+                3: {
+                    title: "الدرس الثالث: جريمة السرقة مفهومها وأركانها وبعض أنواعها",
+                    conceptTitle: "مفهوم جريمة السرقة (المادة ٢١٧ من قانون الجزاء الكويتي)",
+                    concept: "كل من اختلس مالاً منقولاً مملوكاً لغيره بنية تملكه؛ أي أخذ مال منقول أو ممتلكات للغير دون رضاه بقصد تملكها.",
+                    points: [
+                        "الركن المادي: فعل اختلاس المال المنقول المملوك للغير دون رضاه (ويشترط أن يكون المال منقولاً ذا قيمة ومملوكاً للغير مثل الهاتف والنقود والساعة، لا الأراضي والمباني).",
+                        "الركن المعنوي: القصد الجنائي أو نية التملك، بعلم الجاني أن الشيء ليس ملكه وقصده الاحتفاظ به وحرمان صاحبه.",
+                        "الركن الشرعي: وجود نص قانوني يجرّم السرقة ويحدد العقوبة المناسبة لها.",
+                        "السرقة البسيطة: الاستيلاء على مال أو ممتلكات الغير دون وجه حق ومن غير عنف أو ظروف مشددة.",
+                        "السرقة المشددة: تقترن بظروف تزيد خطورتها مثل وقوعها ليلاً أو بالكسر أو السلاح أو بالاشتراك بين عدة أشخاص (المواد ٢٢١ و٢٢٢).",
+                        "السرقة بالإكراه: من أخطر أنواع السرقة، وتتم بالعنف أو التهديد لتسهيل الاستيلاء على المال أو منع المجني عليه من المقاومة."
+                    ],
+                    activities: [
+                        "حلّل موقف فتح درج زميل وأخذ مبلغ مالي موضوع في جيب دون علم صاحبه من حيث: محل الجريمة، وكونه مالاً منقولاً، والسلوك الذي يمثل الركن المادي.",
+                        "ما التصرف الصحيح عند مشاهدة حادثة سرقة داخل المدرسة؟",
+                        "علل: تعد السرقة بالإكراه أخطر أنواع السرقة."
+                    ]
+                },
+                4: {
+                    title: "الدرس الرابع: جريمة النصب والاحتيال مفهومها وأشكالها",
+                    conceptTitle: "مفهوم جريمة النصب والاحتيال",
+                    concept: "استعمال الخداع أو الكذب أو الطرق الاحتيالية بقصد الحصول على مال أو منفعة من شخص آخر.",
+                    points: [
+                        "الفرق بين النصب والسرقة: النصب والاحتيال يقومان على الخداع والتضليل لحمل المجني عليه على تسليم المال أو المنفعة بإرادته المخدوعة، بينما السرقة أخذ المال خفية أو دون علم صاحبه أو رضاه.",
+                        "الركن المادي: استعمال وسائل احتيالية أو أكاذيب أو خداع تؤدي إلى تسليم المال أو المنفعة.",
+                        "الركن المعنوي: علم الجاني بأنه يخدع الآخرين وإرادته الحصول على المال أو المنفعة بطرق غير مشروعة.",
+                        "الركن الشرعي: وجود نص قانوني يجرّم النصب والاحتيال ويحدد العقوبة المناسبة.",
+                        "أشكال النصب والاحتيال: الاحتيال الإلكتروني (روابط وهمية، انتحال شخصية، بيع منتجات غير حقيقية عبر الإنترنت)، الاحتيال المالي (ترويج لاستثمارات وهمية أو طلب تحويل أموال بحجج كاذبة)، والاحتيال في البيع والشراء (سلعة غير مطابقة للوصف أو استلام المال دون تسليم المنتج)."
+                    ],
+                    activities: [
+                        "حلّل موقف إنشاء حساب وهمي مزيف وطلب تحويل أموال بحجة تقديم المساعدة للمحتاجين (الشكل المستخدم والركن المادي).",
+                        "وضّح كيف يسهم الوعي والحذر في حماية الفرد والمجتمع من مخاطر النصب والاحتيال."
+                    ]
+                },
+                5: {
+                    title: "الدرس الخامس: جريمة خيانة الأمانة مفهومها وأركانها وصورها",
+                    conceptTitle: "مفهوم جريمة خيانة الأمانة",
+                    concept: "الاستيلاء على مال أو شيء سُلّم إلى شخص على سبيل الأمانة، ثم التصرف فيه بغير حق أو الامتناع عن إعادته.",
+                    points: [
+                        "الركن المادي: قيام الجاني بالتصرف في المال أو الشيء المملوك بخلاف الاتفاق أو الامتناع عن رده بقصد الاستيلاء عليه بعد تسلمه على سبيل الأمانة أو الثقة.",
+                        "الركن المعنوي: أن يتصرف الجاني عمداً بالمال وهو يعلم أنه ليس ملكه، أو يستولي عليه.",
+                        "الركن الشرعي: نص قانوني يجرّم خيانة الأمانة ويحدد العقوبة المناسبة.",
+                        "صور خيانة الأمانة: بين الأصدقاء (استعارة غرض ثم إنكار استعارته أو رفض إعادته)، في العمل (احتفاظ موظف بأموال أو ممتلكات سُلمت إليه بحكم عمله)، في المعاملات (استلام أموال لتوصيلها ثم الاستيلاء عليها)، والإلكترونية (استغلال حساب أو بيانات أُتيحت لشخص على سبيل الثقة).",
+                        "الآثار السلبية: عدم استقرار المجتمع وضعف التماسك الاجتماعي وإضعاف الثقة بين الناس."
+                    ],
+                    activities: [
+                        "حلّل موقف طالب استعار جهازاً إلكترونياً من زميل لمدة يومين ثم رفض إرجاعه وادعى أنه أصبح ملكه (هل يُعد خيانة أمانة؟ وما الركن المادي والمعنوي؟).",
+                        "اكتب فقرة توضح فيها أثر خيانة الأمانة على الثقة بين الناس واستقرار المجتمع."
+                    ]
+                }
+            };
+
+            var sims = [
+                {
+                    sender: "رسالة تحديث حساب",
+                    msg: "تم تعليق حسابك مؤقتاً. أدخل اسم المستخدم وكلمة المرور عبر الرابط: http://account-check-link.example",
+                    analysis: "النوع: احتيال إلكتروني عبر رابط وهمي لسرقة البيانات. التصرف الصحيح: عدم فتح الرابط وعدم مشاركة البيانات السرية."
+                },
+                {
+                    sender: "إعلان استثمار سريع",
+                    msg: "عائد مالي مضمون خلال ٢٤ ساعة دون مخاطرة! حوّل المبلغ الآن لتبدأ الربح فوراً.",
+                    analysis: "النوع: احتيال مالي بالترويج لاستثمارات وهمية. التصرف الصحيح: الحذر من الوعود الوهمية وعدم تحويل الأموال لجهات غير موثوقة."
+                },
+                {
+                    sender: "متجر إلكتروني",
+                    msg: "تم استلام المبلغ، ولن يتم تسليم المنتج أو سيكون مخالفاً تماماً للوصف المتفق عليه.",
+                    analysis: "النوع: احتيال في البيع والشراء. التصرف الصحيح: التأكد من موثوقية البائع وحفظ حقوق المستهلك."
+                },
+                {
+                    sender: "رسالة توعوية رسمية",
+                    msg: "تذكير: لا تطلب الجهات الرسمية أرقامك السرية أو رموز التحقق عبر الرسائل النصية.",
+                    analysis: "الحالة: إشعار توعوي آمن يعزز الحماية ولا يطلب أي بيانات أو أموال."
+                }
+            ];
+
+            var labItems = [
+                {
+                    text: "أخذ شخص هاتفاً محمولاً من حقيبة زميله خفيةً دون علمه أو رضاه بنية تملكه.",
+                    ans: "سرقة",
+                    reason: "سرقة؛ لأنها اختلاس مال منقول مملوك للغير دون رضاه بقصد تملكه.",
+                    clues: [
+                        { label: "دليل ١ • المال", detail: "هاتف محمول وهو مال منقول مملوك للغير." },
+                        { label: "دليل ٢ • الأسلوب", detail: "أُخذ خفيةً دون علم صاحبه أو رضاه." },
+                        { label: "دليل ٣ • القصد", detail: "نية تملك الهاتف والاحتفاظ به." }
+                    ]
+                },
+                {
+                    text: "أوهم شخص آخر بمشروع وهمي وأخذ أمواله بعد خداعه وتضليله.",
+                    ans: "نصب واحتيال",
+                    reason: "نصب واحتيال؛ لأنها تعتمد على الخداع والتضليل لحمل المجني عليه على تسليم المال.",
+                    clues: [
+                        { label: "دليل ١ • الوسيلة", detail: "إيهام بمشروع وهمي وكذب وتضليل." },
+                        { label: "دليل ٢ • الإرادة", detail: "تسليم المال بناءً على خداع وإرادة مضللة." },
+                        { label: "دليل ٣ • المنفعة", detail: "الحصول على أموال الغير بطرق احتيالية." }
+                    ]
+                },
+                {
+                    text: "استعار شخص كتاباً أو جهازاً على سبيل الأمانة ثم أنكر استعارته ورفض إعادته.",
+                    ans: "خيانة أمانة",
+                    reason: "خيانة أمانة؛ لأن الشيء سُلم على سبيل الأمانة ثم تم الامتناع عن رده بقصد الاستيلاء عليه.",
+                    clues: [
+                        { label: "دليل ١ • التسليم", detail: "تسلّم الشيء في البداية على سبيل الأمانة والثقة." },
+                        { label: "دليل ٢ • المخالفة", detail: "إنكار الاستعارة والامتناع عن رد الأمانة." },
+                        { label: "دليل ٣ • النية", detail: "الاستيلاء على الشيء بغير حق." }
+                    ]
+                },
+                {
+                    text: "تهديد شخص بالعنف أو السلاح لإجباره على تسليم نقوده.",
+                    ans: "سرقة",
+                    reason: "سرقة بالإكراه؛ وهي من أخطر أنواع السرقة وتتم بالعنف أو التهديد.",
+                    clues: [
+                        { label: "دليل ١ • المال", detail: "نقود منقولة مملوكة للغير." },
+                        { label: "دليل ٢ • الظرف", detail: "استعمال العنف أو التهديد لإجبار المجني عليه." },
+                        { label: "دليل ٣ • الخطورة", detail: "تُعد من أخطر صور السرقة." }
+                    ]
+                }
+            ];
+
+            var quizQuestions = [
+                {
+                    q: "ما المقصود بالنزاهة؟",
+                    opts: [
+                        "التحلي بالصدق والأمانة والعدل والابتعاد عن الغش والفساد واستغلال السلطة لمصلحة شخصية",
+                        "أخذ أموال الغير دون علمهم",
+                        "نشر الشائعات عبر الإنترنت"
+                    ],
+                    ans: 0
+                },
+                {
+                    q: "تُعرّف السرقة في المادة (٢١٧) من قانون الجزاء الكويتي بأنها:",
+                    opts: [
+                        "الخداع للحصول على منفعة مالية",
+                        "اختلاس مال منقول مملوك لغيره بنية تملكه",
+                        "الامتناع عن رد أمانة"
+                    ],
+                    ans: 1
+                },
+                {
+                    q: "إرسال روابط وهمية لسرقة الحسابات أو الأموال يُعد من:",
+                    opts: [
+                        "الاحتيال الإلكتروني",
+                        "السرقة بالإكراه",
+                        "خيانة الأمانة في العمل"
+                    ],
+                    ans: 0
+                },
+                {
+                    q: "من الآثار السلبية لخيانة الأمانة على المجتمع:",
+                    opts: [
+                        "زيادة الثقة بين الناس",
+                        "عدم استقرار المجتمع وضعف التماسك وإضعاف الثقة بين الناس",
+                        "ترسيخ العدالة الاجتماعية"
+                    ],
+                    ans: 1
+                }
+            ];
+
+            var currentSim = 0;
+            var labIndex = 0;
+            var labScore = 0;
+            var labDone = false;
+            var revealedClues = [];
+            var qIdx = 0;
+            var qPts = 0;
+
+            function showSection(name) {
+                var schoolBadge = document.getElementById("topSchoolBadge");
+                if (schoolBadge) {
+                    schoolBadge.style.display = (name === "home") ? "inline-block" : "none";
+                }
+                for (var i = 0; i < sectionIds.length; i++) {
+                    var sName = sectionIds[i];
+                    var sec = document.getElementById("sec-" + sName);
+                    var btn = document.getElementById("btn-" + sName);
+                    if (sec) {
+                        sec.style.display = (sName === name) ? "block" : "none";
+                        if (sName === name) {
+                            sec.classList.add("active-section");
+                        } else {
+                            sec.classList.remove("active-section");
+                        }
+                    }
+                    if (btn) {
+                        btn.className = (sName === name) ? "nav-btn active" : "nav-btn";
+                    }
+                }
+                window.scrollTo(0, 0);
+            }
+
+            function renderLesson(num) {
+                if (!lessons[num]) num = 1;
+                for (var i = 1; i <= 5; i++) {
+                    var b = document.getElementById("lbtn-" + i);
+                    if (b) {
+                        b.className = (i === num) ? "lesson-btn active" : "lesson-btn";
+                    }
+                }
+                var item = lessons[num];
+                var html = "<h3 style='color:#1b365d; font-size:20px; font-weight:700;'>" + item.title + "</h3>";
+                html += "<div class='concept-box'><h4>" + item.conceptTitle + "</h4><p>" + item.concept + "</p></div>";
+                html += "<h4 style='color:#1b365d; font-weight:700; margin-bottom:8px;'>أبرز النقاط والمفاهيم:</h4><ul class='point-list'>";
+                for (var p = 0; p < item.points.length; p++) {
+                    html += "<li>" + item.points[p] + "</li>";
+                }
+                html += "</ul><h4 style='color:#1b365d; font-weight:700; margin-bottom:8px;'>أنشطة وممارسات الدرس:</h4>";
+                for (var a = 0; a < item.activities.length; a++) {
+                    html += "<div class='activity-item'><strong>نشاط " + (a + 1) + ":</strong> " + item.activities[a] + "</div>";
+                }
+                var area = document.getElementById("lesson-content-area");
+                if (area) area.innerHTML = html;
+            }
+
+            function loadSim(idx) {
+                if (!sims[idx]) idx = 0;
+                currentSim = idx;
+                var senderEl = document.getElementById("sim-sender");
+                var msgEl = document.getElementById("sim-msg");
+                var resEl = document.getElementById("sim-result");
+                if (senderEl) senderEl.innerText = sims[idx].sender;
+                if (msgEl) msgEl.innerText = sims[idx].msg;
+                if (resEl) resEl.innerText = "اضغط على زر «فحص وتحليل الرسالة» لعرض النتيجة.";
+            }
+
+            function updateTruthMeter() {
+                var fill = document.getElementById("truthMeterFill");
+                var label = document.getElementById("truthPercentLabel");
+                if (!fill || !label) return;
+                if (labIndex >= labItems.length) {
+                    fill.style.width = "100%";
+                    label.innerText = "نسبة كشف الأدلة: 100%";
+                    return;
+                }
+                var total = labItems[labIndex].clues.length;
+                var pct = Math.round((revealedClues.length / total) * 100);
+                fill.style.width = pct + "%";
+                label.innerText = "نسبة كشف الأدلة: " + pct + "%";
+            }
+
+            function renderClues() {
+                var container = document.getElementById("cluesContainer");
+                if (!container) return;
+                if (labIndex >= labItems.length) {
+                    container.innerHTML = "";
+                    return;
+                }
+                var clues = labItems[labIndex].clues;
+                var html = "";
+                for (var i = 0; i < clues.length; i++) {
+                    var isOpen = revealedClues.indexOf(i) !== -1;
+                    html += "<div class='clue-card " + (isOpen ? "revealed" : "") + "'>";
+                    html += "<div style='font-weight:700; color:#ead39c; font-size:13px;'>" + clues[i].label + "</div>";
+                    if (isOpen) {
+                        html += "<div style='font-size:13.5px; color:#f8f7f2; margin-top:6px;'>" + clues[i].detail + "</div>";
+                    } else {
+                        html += "<div style='font-size:12.5px; color:#dce4ec; margin-top:4px;'>دليل مشفر بانتظار الفحص</div>";
+                        html += "<button type='button' class='clue-btn' data-clue='" + i + "'>كشف الدليل</button>";
+                    }
+                    html += "</div>";
+                }
+                container.innerHTML = html;
+            }
+
+            function showLabItem() {
+                labDone = false;
+                revealedClues = [];
+                var fb = document.getElementById("lab-feedback");
+                var nxt = document.getElementById("lab-next-btn");
+                var counterEl = document.getElementById("lab-counter");
+                var scoreEl = document.getElementById("lab-score");
+                var caseBox = document.getElementById("lab-case-box");
+                if (fb) fb.style.display = "none";
+                if (nxt) nxt.style.display = "none";
+
+                if (labIndex < labItems.length) {
+                    if (counterEl) counterEl.innerText = "القضية " + (labIndex + 1) + " من " + labItems.length;
+                    if (scoreEl) scoreEl.innerText = "الدرجة: " + labScore;
+                    if (caseBox) caseBox.innerHTML = "<h4 style='color:#ead39c;'>ملف القضية:</h4><p style='color:#f8f7f2;'>" + labItems[labIndex].text + "</p>";
+                    renderClues();
+                    updateTruthMeter();
+                } else {
+                    if (counterEl) counterEl.innerText = "انتهى التحقيق";
+                    if (scoreEl) scoreEl.innerText = "الدرجة النهائية: " + labScore + " من " + labItems.length;
+                    if (caseBox) caseBox.innerHTML = "<h4 style='color:#ead39c;'>تقرير التحقيق النهائي:</h4><p style='color:#f8f7f2;'>أنهيت جميع القضايا وحصلت على " + labScore + " من " + labItems.length + ".</p>";
+                    renderClues();
+                    updateTruthMeter();
+                    if (nxt) {
+                        nxt.innerText = "إعادة التحقيق";
+                        nxt.style.display = "inline-block";
+                    }
+                }
+            }
+
+            function drawQuiz() {
+                var qCard = document.getElementById("quiz-card");
+                var cCard = document.getElementById("cert-card");
+                var quizBody = document.getElementById("quiz-body");
+                var certText = document.getElementById("cert-result-text");
+
+                if (qIdx < quizQuestions.length) {
+                    if (qCard) qCard.style.display = "block";
+                    if (cCard) cCard.style.display = "none";
+                    var item = quizQuestions[qIdx];
+                    var html = "<p style='font-weight:700; color:#4b5e7a; margin-bottom:10px;'>السؤال " + (qIdx + 1) + " من " + quizQuestions.length + "</p>";
+                    html += "<h3 style='color:#1b365d; font-size:18px; font-weight:700; margin-bottom:14px;'>" + item.q + "</h3><div class='option-stack'>";
+                    for (var i = 0; i < item.opts.length; i++) {
+                        html += "<button type='button' class='choice-btn' data-quiz-opt='" + i + "'>" + item.opts[i] + "</button>";
+                    }
+                    html += "</div>";
+                    if (quizBody) quizBody.innerHTML = html;
+                } else {
+                    if (qCard) qCard.style.display = "none";
+                    if (cCard) cCard.style.display = "block";
+                    if (certText) certText.innerText = "نتيجتك في الاختبار: " + qPts + " من " + quizQuestions.length;
+                }
+            }
+
+            document.addEventListener("click", function(e) {
+                var target = e.target.closest("button");
+                if (!target) return;
+
+                if (target.hasAttribute("data-section")) {
+                    showSection(target.getAttribute("data-section"));
+                    return;
+                }
+
+                if (target.id === "heroOpenLessonsBtn") {
+                    showSection("lessons");
+                    renderLesson(1);
+                    return;
+                }
+
+                if (target.id === "heroOpenLabBtn") {
+                    showSection("lab");
+                    return;
+                }
+
+                if (target.hasAttribute("data-jump-lesson")) {
+                    var jNum = parseInt(target.getAttribute("data-jump-lesson"), 10);
+                    showSection("lessons");
+                    renderLesson(jNum);
+                    return;
+                }
+
+                if (target.hasAttribute("data-lesson")) {
+                    var lNum = parseInt(target.getAttribute("data-lesson"), 10);
+                    renderLesson(lNum);
+                    return;
+                }
+
+                if (target.hasAttribute("data-sim")) {
+                    var sIdx = parseInt(target.getAttribute("data-sim"), 10);
+                    loadSim(sIdx);
+                    return;
+                }
+
+                if (target.id === "analyzeSimBtn") {
+                    var resEl = document.getElementById("sim-result");
+                    if (resEl) resEl.innerText = sims[currentSim].analysis;
+                    return;
+                }
+
+                if (target.hasAttribute("data-clue")) {
+                    var cIdx = parseInt(target.getAttribute("data-clue"), 10);
+                    if (revealedClues.indexOf(cIdx) === -1) {
+                        revealedClues.push(cIdx);
+                    }
+                    renderClues();
+                    updateTruthMeter();
+                    return;
+                }
+
+                if (target.hasAttribute("data-answer")) {
+                    if (labIndex >= labItems.length || labDone) return;
+                    labDone = true;
+                    revealedClues = [0, 1, 2];
+                    renderClues();
+                    updateTruthMeter();
+
+                    var choice = target.getAttribute("data-answer");
+                    var item = labItems[labIndex];
+                    var fb = document.getElementById("lab-feedback");
+                    var nxt = document.getElementById("lab-next-btn");
+                    var scoreEl = document.getElementById("lab-score");
+
+                    if (fb) {
+                        fb.style.display = "block";
+                        if (choice === item.ans) {
+                            labScore++;
+                            fb.className = "feedback-box feedback-ok";
+                            fb.innerText = "قرار صحيح. " + item.reason;
+                        } else {
+                            fb.className = "feedback-box feedback-err";
+                            fb.innerText = "قرار غير دقيق. التكييف الصحيح: " + item.ans + ". " + item.reason;
+                        }
+                    }
+                    if (scoreEl) scoreEl.innerText = "الدرجة: " + labScore;
+                    if (nxt) {
+                        nxt.innerText = "القضية التالية";
+                        nxt.style.display = "inline-block";
+                    }
+                    return;
+                }
+
+                if (target.id === "lab-next-btn") {
+                    if (labIndex >= labItems.length) {
+                        labIndex = 0;
+                        labScore = 0;
+                    } else {
+                        labIndex++;
+                    }
+                    showLabItem();
+                    return;
+                }
+
+                if (target.hasAttribute("data-quiz-opt")) {
+                    var chosen = parseInt(target.getAttribute("data-quiz-opt"), 10);
+                    if (qIdx < quizQuestions.length && chosen === quizQuestions[qIdx].ans) {
+                        qPts++;
+                    }
+                    qIdx++;
+                    drawQuiz();
+                    return;
+                }
+
+                if (target.id === "resetQuizBtn") {
+                    qIdx = 0;
+                    qPts = 0;
+                    drawQuiz();
+                }
+            });
+
+            renderLesson(1);
+            loadSim(0);
+            showLabItem();
+            drawQuiz();
+        })();
+    </script>
+</body>
+</html>
